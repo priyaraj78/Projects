@@ -1,0 +1,23 @@
+Wrote bash shell script that takes the information below as input on the command line as
+arguments or reading interactively from the user if the input isn’t provided on the command line
+as an argument. Both methods are supported. For the interactive run, the user is prompted to let them know what to input. If the user provides an argument, then I can
+assume all arguments is there.
+Following are the conditions I kept in mind:
+● User ID or username (either should be accepted as valid input)
+○ Must validate the UID or username as one that exists on this system
+○ Exit with a descriptive error message if it does not exist
+● Group ID or group name (either should be accepted as valid input)
+○ Must validate the GID or group name as one that exists on the system and that
+the user provided is a member of that group
+○ Exit with a descriptive error message if it does not exist
+● Absolute path of the directory to search in
+○ Must validate the path to ensure the directory exists
+○ Must validate that it is an absolute path
+○ Exit with a descriptive error message if it does not exist
+
+An output file is created called “acl_files.txt” in the “project” directory within my home
+space. The output file has one entry per file or directory as described below.
+Each entry has the following fields. The fields is separated by a colon.
+● Absolute path of the file or directory
+● Permissions of the file (all permissions in the form they are displayed by the “ls -l”
+command)
